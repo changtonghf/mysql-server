@@ -12593,11 +12593,6 @@ static bool fill_alter_inplace_info(THD *thd, TABLE *table,
               Alter_inplace_info::ADD_STORED_BASE_COLUMN;
       }
     }
-    /* One of these should be set since Alter_info::ALTER_ADD_COLUMN was set. */
-    assert(ha_alter_info->handler_flags &
-           (Alter_inplace_info::ADD_VIRTUAL_COLUMN |
-            Alter_inplace_info::ADD_STORED_BASE_COLUMN |
-            Alter_inplace_info::ADD_STORED_GENERATED_COLUMN));
   }
 
   /*
